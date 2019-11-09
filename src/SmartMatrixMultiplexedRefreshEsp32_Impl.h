@@ -137,7 +137,7 @@ void SmartMatrix3RefreshMultiplexed<refreshDepth, matrixWidth, matrixHeight, pan
     // TODO: malloc this buffer before other smaller buffers as this is (by far) the largest buffer to allocate?
     matrixUpdateFrames[0] = (frameStruct *)heap_caps_malloc(sizeof(frameStruct), MALLOC_CAP_DMA);
     assert(matrixUpdateFrames[0] != NULL);
-    matrixUpdateFrames[1] = (frameStruct *)heap_caps_malloc(sizeof(frameStruct), MALLOC_CAP_DMA);
+    matrixUpdateFrames[1] = matrixUpdateFrames[0];
     assert(matrixUpdateFrames[1] != NULL);
 
     printf("sizeof framestruct: %08X\r\n", (uint32_t)sizeof(frameStruct));
